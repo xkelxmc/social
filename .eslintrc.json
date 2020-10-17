@@ -1,11 +1,14 @@
 {
     "root": true,
-    "env": {
-        "browser": true,
-        "es2020": true,
-        "react-native/react-native": true
-    },
+    "plugins": [
+        "import",
+        "react",
+        "react-native",
+        "react-hooks",
+        "prettier"
+    ],
     "extends": [
+        "@react-native-community",
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:prettier/recommended"
@@ -16,15 +19,20 @@
             "jsx": true,
             "classes": true
         },
-        "ecmaVersion": 11,
+        "ecmaVersion": 2020,
         "sourceType": "module"
     },
-    "plugins": [
-        "import",
-        "react",
-        "react-native",
-        "prettier"
-    ],
+    "rules": {
+        "react/prop-types": 0,
+        "no-unused-vars": 1,
+        "react-native/no-unused-styles": 2,
+        "react-native/split-platform-components": 2,
+        "react-native/no-inline-styles": 2,
+        "react-native/no-color-literals": 0,
+        "react-native/no-raw-text": 2,
+        "react-native/sort-styles": 0,
+        "react/display-name": 0
+    },
     "settings": {
         "import/resolver": {
             "node": {
@@ -43,17 +51,5 @@
                 }
             }
         }
-    },
-    "rules": {
-        "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow", "tabWidth":  4}],
-        "react/prop-types": 0,
-        "no-unused-vars": 1,
-        "react-native/no-unused-styles": 2,
-        "react-native/split-platform-components": 2,
-        "react-native/no-inline-styles": 2,
-        "react-native/no-color-literals": 0,
-        "react-native/no-raw-text": 2,
-        "react-native/sort-styles": 0,
-        "react/display-name": 0
     }
 }
