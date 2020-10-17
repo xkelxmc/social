@@ -1,0 +1,59 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "es2020": true,
+        "react-native/react-native": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "classes": true
+        },
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "import",
+        "react",
+        "react-native",
+        "prettier"
+    ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"],
+                "alias": {
+                    "_assets": "./src/assets",
+                    "_components": "./src/components",
+                    "_atoms": "./src/components/atoms",
+                    "_molecules": "./src/components/molecules",
+                    "_organisms": "./src/components/organisms",
+                    "_navigations": "./src/navigations",
+                    "_scenes": "./src/scenes",
+                    "_services": "./src/services",
+                    "_styles": "./src/styles",
+                    "_utils": "./src/utils"
+                }
+            }
+        }
+    },
+    "rules": {
+        "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow", "tabWidth":  4}],
+        "react/prop-types": 0,
+        "no-unused-vars": 1,
+        "react-native/no-unused-styles": 2,
+        "react-native/split-platform-components": 2,
+        "react-native/no-inline-styles": 2,
+        "react-native/no-color-literals": 0,
+        "react-native/no-raw-text": 2,
+        "react-native/sort-styles": 0,
+        "react/display-name": 0
+    }
+}
